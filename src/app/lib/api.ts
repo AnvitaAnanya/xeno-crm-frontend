@@ -4,6 +4,14 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000",
 });
 
+// Add trailing slash to every request automatically
+api.interceptors.request.use((config) => {
+  if (config.url && !config.url.endsWith("/")) {
+    config.url = config.url + "/";
+  }
+  return config;
+});
+
 export interface Message {
   role: "user" | "assistant";
   content: string;
