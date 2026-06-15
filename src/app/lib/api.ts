@@ -1,4 +1,3 @@
-// API client functions
 import axios from "axios";
 
 const api = axios.create({
