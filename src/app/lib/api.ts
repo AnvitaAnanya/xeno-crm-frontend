@@ -1,15 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000",
-});
-
-// Add trailing slash to every request automatically
-api.interceptors.request.use((config) => {
-  if (config.url && !config.url.endsWith("/")) {
-    config.url = config.url + "/";
-  }
-  return config;
+  baseURL: "https://web-production-aa65b0.up.railway.app",
 });
 
 export interface Message {
