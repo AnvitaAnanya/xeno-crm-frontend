@@ -1,7 +1,9 @@
 import axios from "axios";
 
+// Direct call to Railway — no proxy
 const api = axios.create({
   baseURL: "https://web-production-aa65b0.up.railway.app",
+  withCredentials: false,
 });
 
 export interface Message {
